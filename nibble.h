@@ -47,3 +47,11 @@ inline HexDigits inlineCharToHexLookup(char c) {
     digits.hex[1] = inlineHexNibbleLookup(uc & 0x0f);
     return digits;
 }
+
+inline std::string inlineCharToHexString(char c) {
+    std::string s{"00"};
+    unsigned char uc = c;
+    s[0] = inlineHexNibbleLookup(uc >> 4);
+    s[1] = inlineHexNibbleLookup(uc & 0xf);
+    return s;
+}

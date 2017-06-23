@@ -99,6 +99,14 @@ static void BM_lookuptable_string_v4(benchmark::State& state) {
     }
 }
 
+static void BM_string_direct(benchmark::State& state) {
+    unsigned char c = 0;
+    while (state.KeepRunning()) {
+        string s{"%"};
+        s += inlineCharToHexString(c++);
+    }
+}
+
 static void BM_snprintf_version(benchmark::State& state) {
     unsigned char c = 0;
     while (state.KeepRunning()) {
@@ -160,6 +168,7 @@ BENCHMARK(BM_lookuptable_string_v2);
 BENCHMARK(BM_lookuptable_string_v3);
 BENCHMARK(BM_lookuptable_string_v3b);
 BENCHMARK(BM_lookuptable_string_v4);
+BENCHMARK(BM_string_direct);
 BENCHMARK(BM_snprintf_version);
 BENCHMARK(BM_snprintf_string);
 BENCHMARK(BM_fmt_version);
