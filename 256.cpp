@@ -307,3 +307,7 @@ std::string lookup256Digits(char c) {
     s[1] = d.hex[1];
     return s;
 }
+
+HexDigits lookup256HexDigits(char c) {
+    return digits[c];
+}

@@ -207,6 +207,26 @@ static void BM_lookup256Digits_direct(benchmark::State& state) {
     }
 }
 
+static void BM_lookup256HexDigits(benchmark::State& state) {
+    unsigned char c = 0;
+    while (state.KeepRunning()) {
+        string s{"%00"};
+        struct HexDigits d = lookup256HexDigits(c);
+        s[1] = d.hex[0];
+        s[2] = d.hex[1];
+    }
+}
+
+static void BM_lookup256HexDigitsInline(benchmark::State& state) {
+    unsigned char c = 0;
+    while (state.KeepRunning()) {
+        string s{"%00"};
+        struct HexDigits d = inlineLookup256HexDigits(c);
+        s[1] = d.hex[0];
+        s[2] = d.hex[1];
+    }
+}
+
 BENCHMARK(BM_constexpr_version);
 BENCHMARK(BM_constexpr_lookuptable);
 BENCHMARK(BM_lookuptable_fast);
@@ -222,6 +242,8 @@ BENCHMARK(BM_lookup256);
 BENCHMARK(BM_lookup256_direct);
 BENCHMARK(BM_lookup256Digits);
 BENCHMARK(BM_lookup256Digits_direct);
+BENCHMARK(BM_lookup256HexDigits);
+BENCHMARK(BM_lookup256HexDigitsInline);
 BENCHMARK(BM_snprintf_version);
 BENCHMARK(BM_snprintf_string);
 BENCHMARK(BM_fmt_version);

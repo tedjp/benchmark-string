@@ -23,30 +23,32 @@ Results
 =======
 
     Run on (8 X 3300 MHz CPU s)
-    2017-06-23 13:48:15
-    ------------------------------------------------------------------
-    Benchmark                           Time           CPU Iterations
-    ------------------------------------------------------------------
-    BM_constexpr_version               13 ns         13 ns   52804596
-    BM_constexpr_lookuptable           14 ns         14 ns   50653577
-    BM_lookuptable_fast                 3 ns          3 ns  231107031
-    BM_lookuptable_fast_inline          2 ns          2 ns  381351157
-    BM_lookuptable_string              13 ns         13 ns   51645108
-    BM_lookuptable_string_v2           14 ns         14 ns   51385126
-    BM_lookuptable_string_v3           10 ns         10 ns   70737632
-    BM_lookuptable_string_v3b          10 ns         10 ns   70749333
-    BM_lookuptable_string_v4            4 ns          4 ns  163699393
-    BM_string_direct                    9 ns          9 ns   75923238
-    BM_string_direct_noinline          10 ns         10 ns   71162959
-    BM_lookup256                        9 ns          9 ns   78598048
-    BM_lookup256_direct                 8 ns          8 ns   90490319
-    BM_lookup256Digits                  9 ns          9 ns   74773277
-    BM_lookup256Digits_direct           8 ns          8 ns   90438880
-    BM_snprintf_version                78 ns         78 ns    8852204
-    BM_snprintf_string                 81 ns         81 ns    8560928
-    BM_fmt_version                     57 ns         57 ns   12011347
-    BM_fmt_braces                      53 ns         53 ns   13038189
-    BM_stringstream                   551 ns        551 ns    1252955
+    2017-06-23 14:07:32
+    -------------------------------------------------------------------
+    Benchmark                            Time           CPU Iterations
+    -------------------------------------------------------------------
+    BM_constexpr_version                 4 ns          4 ns  161956705
+    BM_constexpr_lookuptable             4 ns          4 ns  189888838
+    BM_lookuptable_fast                  3 ns          3 ns  228398394
+    BM_lookuptable_fast_inline           2 ns          2 ns  380867112
+    BM_lookuptable_string                7 ns          7 ns   98330688
+    BM_lookuptable_string_v2             9 ns          9 ns   77897460
+    BM_lookuptable_string_v3             9 ns          9 ns   77926789
+    BM_lookuptable_string_v3b            9 ns          9 ns   77906011
+    BM_lookuptable_string_v4             4 ns          4 ns  163726662
+    BM_string_direct                     2 ns          2 ns  380637077
+    BM_string_direct_noinline            9 ns          9 ns   78401115
+    BM_lookup256                         6 ns          6 ns  125625413
+    BM_lookup256_direct                  7 ns          7 ns  102880619
+    BM_lookup256Digits                   9 ns          9 ns   75783416
+    BM_lookup256Digits_direct            7 ns          7 ns  102897115
+    BM_lookup256HexDigits                3 ns          3 ns  248603557
+    BM_lookup256HexDigitsInline          2 ns          2 ns  380661413
+    BM_snprintf_version                 69 ns         69 ns    9995511
+    BM_snprintf_string                  68 ns         68 ns   10194407
+    BM_fmt_version                      54 ns         54 ns   12820814
+    BM_fmt_braces                       49 ns         49 ns   14301296
+    BM_stringstream                    551 ns        551 ns    1249464
 
 
 How to run this test
