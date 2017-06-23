@@ -46,10 +46,11 @@ Results
 How to run this test
 ====================
 
-Dependencies:
+Dependencies
+------------
 
-[fmt](https://github.com/fmtlib/fmt)
-[Google benchmark](https://github.com/google/benchmark)
+- [fmt](https://github.com/fmtlib/fmt)
+- [Google benchmark](https://github.com/google/benchmark)
 
 Update the paths to libfmt.a, libbenchmark.a & the benchmark include
 directory in the `Makefile`.
