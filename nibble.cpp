@@ -60,8 +60,9 @@ std::string charToHexLookupStringv2(char c) {
 }
 
 std::string charToHexWithInlineLookup(char c) {
+    unsigned char uc = c;
     std::string s{"00"};
-    s[0] = inlineHexNibbleLookup(c >> 4);
-    s[1] = inlineHexNibbleLookup(c & 0xf);
+    s[0] = inlineHexNibbleLookup(uc >> 4);
+    s[1] = inlineHexNibbleLookup(uc & 0xf);
     return s;
 }
