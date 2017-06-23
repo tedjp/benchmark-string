@@ -107,6 +107,15 @@ static void BM_string_direct(benchmark::State& state) {
     }
 }
 
+// Same as BM_string_direct but not using the inline version
+static void BM_string_direct_noinline(benchmark::State& state) {
+    unsigned char c = 0;
+    while (state.KeepRunning()) {
+        string s{"%"};
+        s += charToHexWithInlineLookup(c++);
+    }
+}
+
 static void BM_snprintf_version(benchmark::State& state) {
     unsigned char c = 0;
     while (state.KeepRunning()) {
@@ -169,6 +178,7 @@ BENCHMARK(BM_lookuptable_string_v3);
 BENCHMARK(BM_lookuptable_string_v3b);
 BENCHMARK(BM_lookuptable_string_v4);
 BENCHMARK(BM_string_direct);
+BENCHMARK(BM_string_direct_noinline);
 BENCHMARK(BM_snprintf_version);
 BENCHMARK(BM_snprintf_string);
 BENCHMARK(BM_fmt_version);

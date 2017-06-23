@@ -23,25 +23,26 @@ Results
 =======
 
     Run on (8 X 3300 MHz CPU s)
-    2017-06-23 12:38:26
+    2017-06-23 12:43:01
     ------------------------------------------------------------------
     Benchmark                           Time           CPU Iterations
     ------------------------------------------------------------------
-    BM_constexpr_version               14 ns         14 ns   49969662
-    BM_constexpr_lookuptable           14 ns         14 ns   51244515
-    BM_lookuptable_fast                 3 ns          3 ns  224502718
-    BM_lookuptable_fast_inline          2 ns          2 ns  380597469
-    BM_lookuptable_string              14 ns         14 ns   50369353
-    BM_lookuptable_string_v2           14 ns         14 ns   51408759
-    BM_lookuptable_string_v3           10 ns         10 ns   70245084
-    BM_lookuptable_string_v3b          10 ns         10 ns   70847817
-    BM_lookuptable_string_v4            5 ns          5 ns  150748477
-    BM_string_direct                    9 ns          9 ns   75267173
-    BM_snprintf_version                79 ns         79 ns    8779360
-    BM_snprintf_string                 80 ns         80 ns    8407058
-    BM_fmt_version                     58 ns         58 ns   12013242
-    BM_fmt_braces                      53 ns         53 ns   13116101
-    BM_stringstream                   548 ns        548 ns    1246907
+    BM_constexpr_version               14 ns         14 ns   43028506
+    BM_constexpr_lookuptable           14 ns         14 ns   49415430
+    BM_lookuptable_fast                 3 ns          3 ns  232228673
+    BM_lookuptable_fast_inline          2 ns          2 ns  381499205
+    BM_lookuptable_string              14 ns         14 ns   50605648
+    BM_lookuptable_string_v2           14 ns         14 ns   50584576
+    BM_lookuptable_string_v3           10 ns         10 ns   68855632
+    BM_lookuptable_string_v3b          10 ns         10 ns   69858716
+    BM_lookuptable_string_v4            5 ns          5 ns  151546880
+    BM_string_direct                    9 ns          9 ns   75860588
+    BM_string_direct_noinline          10 ns         10 ns   68868896
+    BM_snprintf_version                79 ns         79 ns    8840384
+    BM_snprintf_string                 87 ns         87 ns    7968288
+    BM_fmt_version                     57 ns         57 ns   11939420
+    BM_fmt_braces                      54 ns         54 ns   12660690
+    BM_stringstream                   553 ns        553 ns    1242517
 
 
 How to run this test
