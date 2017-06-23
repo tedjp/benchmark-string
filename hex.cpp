@@ -119,9 +119,12 @@ static void BM_snprintf_string(benchmark::State& state) {
     unsigned char c = 0;
     while (state.KeepRunning()) {
         string s;
+        // Allow snprintf to write a trailing NUL-byte
         s.resize(4);
         s[0] = '%';
+        // Obviously this is not ideal.
         snprintf(const_cast<char*>(s.data()) + 1, 3, "%02x", c++);
+        s.resize(3); // trim the trailing NUL-byte
     }
 }
 
