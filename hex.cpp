@@ -11,10 +11,6 @@
 
 using namespace std;
 
-// Using append with all versions because it matches our use of a
-// function that returns a string temporary that is appended
-// (or a stack object in the constexpr version)
-
 static void BM_constexpr_version(benchmark::State& state) {
     unsigned char c = 0;
     while (state.KeepRunning()) {
