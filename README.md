@@ -23,26 +23,28 @@ Results
 =======
 
     Run on (8 X 3300 MHz CPU s)
-    2017-06-23 12:43:01
+    2017-06-23 13:35:32
     ------------------------------------------------------------------
     Benchmark                           Time           CPU Iterations
     ------------------------------------------------------------------
-    BM_constexpr_version               14 ns         14 ns   43028506
-    BM_constexpr_lookuptable           14 ns         14 ns   49415430
-    BM_lookuptable_fast                 3 ns          3 ns  232228673
-    BM_lookuptable_fast_inline          2 ns          2 ns  381499205
-    BM_lookuptable_string              14 ns         14 ns   50605648
-    BM_lookuptable_string_v2           14 ns         14 ns   50584576
-    BM_lookuptable_string_v3           10 ns         10 ns   68855632
-    BM_lookuptable_string_v3b          10 ns         10 ns   69858716
-    BM_lookuptable_string_v4            5 ns          5 ns  151546880
-    BM_string_direct                    9 ns          9 ns   75860588
-    BM_string_direct_noinline          10 ns         10 ns   68868896
-    BM_snprintf_version                79 ns         79 ns    8840384
-    BM_snprintf_string                 87 ns         87 ns    7968288
-    BM_fmt_version                     57 ns         57 ns   11939420
-    BM_fmt_braces                      54 ns         54 ns   12660690
-    BM_stringstream                   553 ns        553 ns    1242517
+    BM_constexpr_version               13 ns         13 ns   52349021
+    BM_constexpr_lookuptable           13 ns         13 ns   45261803
+    BM_lookuptable_fast                 3 ns          3 ns  230050764
+    BM_lookuptable_fast_inline          2 ns          2 ns  380388925
+    BM_lookuptable_string              14 ns         14 ns   51484175
+    BM_lookuptable_string_v2           14 ns         14 ns   51216081
+    BM_lookuptable_string_v3           10 ns         10 ns   70966107
+    BM_lookuptable_string_v3b          10 ns         10 ns   70923088
+    BM_lookuptable_string_v4            4 ns          4 ns  162890586
+    BM_string_direct                    9 ns          9 ns   75243324
+    BM_string_direct_noinline          10 ns         10 ns   71001996
+    BM_lookup256                        8 ns          8 ns   83206006
+    BM_lookup256_direct                 7 ns          7 ns   96494529
+    BM_snprintf_version                80 ns         79 ns    8629455
+    BM_snprintf_string                 80 ns         80 ns    8681422
+    BM_fmt_version                     57 ns         57 ns   12025920
+    BM_fmt_braces                      54 ns         54 ns   12683390
+    BM_stringstream                   548 ns        548 ns    1273815
 
 
 How to run this test

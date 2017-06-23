@@ -7,6 +7,7 @@
 #include <ostream>
 #include <iomanip>
 
+#include "256.h"
 #include "nibble.h"
 
 using namespace std;
@@ -168,6 +169,27 @@ static void BM_stringstream(benchmark::State& state) {
     }
 }
 
+static void BM_lookup256(benchmark::State& state) {
+    unsigned char c = 0;
+    while (state.KeepRunning()) {
+        string s{"%"};
+        s += lookup256(c);
+    }
+}
+
+// Of course we have to test the 256-entry lookup table with
+// direct assignment appending :)
+static void BM_lookup256_direct(benchmark::State& state) {
+    unsigned char c = 0;
+    while (state.KeepRunning()) {
+        string s{"%00"};
+        string hex = lookup256(c);
+        s[1] = hex[0];
+        s[2] = hex[1];
+    }
+}
+
+
 BENCHMARK(BM_constexpr_version);
 BENCHMARK(BM_constexpr_lookuptable);
 BENCHMARK(BM_lookuptable_fast);
@@ -179,6 +201,8 @@ BENCHMARK(BM_lookuptable_string_v3b);
 BENCHMARK(BM_lookuptable_string_v4);
 BENCHMARK(BM_string_direct);
 BENCHMARK(BM_string_direct_noinline);
+BENCHMARK(BM_lookup256);
+BENCHMARK(BM_lookup256_direct);
 BENCHMARK(BM_snprintf_version);
 BENCHMARK(BM_snprintf_string);
 BENCHMARK(BM_fmt_version);
