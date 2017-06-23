@@ -189,6 +189,23 @@ static void BM_lookup256_direct(benchmark::State& state) {
     }
 }
 
+static void BM_lookup256Digits(benchmark::State& state) {
+    unsigned char c = 0;
+    while (state.KeepRunning()) {
+        string s{"%"};
+        s += lookup256Digits(c);
+    }
+}
+
+static void BM_lookup256Digits_direct(benchmark::State& state) {
+    unsigned char c = 0;
+    while (state.KeepRunning()) {
+        string s{"%00"};
+        string hex = lookup256(c);
+        s[1] = hex[0];
+        s[2] = hex[1];
+    }
+}
 
 BENCHMARK(BM_constexpr_version);
 BENCHMARK(BM_constexpr_lookuptable);
@@ -203,6 +220,8 @@ BENCHMARK(BM_string_direct);
 BENCHMARK(BM_string_direct_noinline);
 BENCHMARK(BM_lookup256);
 BENCHMARK(BM_lookup256_direct);
+BENCHMARK(BM_lookup256Digits);
+BENCHMARK(BM_lookup256Digits_direct);
 BENCHMARK(BM_snprintf_version);
 BENCHMARK(BM_snprintf_string);
 BENCHMARK(BM_fmt_version);
